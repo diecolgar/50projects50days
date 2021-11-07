@@ -1,336 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* --------------- GENERAL DEFINITIONS ---------------- */
-
-html {
-	scroll-behavior: smooth;
-}
-
-:root {
-	--lunargreen: #171817;
-	--solargreen: #dbdbdb;
-	--lemongrass: #9ca497;
-	--dustygray: #9c9c9c;
+* {
+  box-sizing: border-box;
 }
 
 body {
-	background-color: var(--lunargreen);
-	font-family: 'Noto Sans JP', sans-serif;
-	height: 100vh;
-	margin: 0;
-	font-size: 1.6rem;
-	letter-spacing: 2px;
-	cursor: default;
+  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
 }
 
-.page {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
-	position: relative;
-	color: var(--solargreen);
-	background-color: var(--lunargreen);
+.search {
+  position: relative;
+  height: 50px;
 }
 
-::selection {
-	color: var(--lunargreen);
-	background: rgba(255, 255, 255, 0.9);
+.search .input {
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  transition: width 0.3s ease;
 }
 
-.separator {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.btn {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
 }
 
-.additional {
-	height: 20vh !important;
+.btn:focus,
+.input:focus {
+  outline: none;
 }
 
-.header {
-	opacity: 0;
-	margin-bottom: 2rem;
+.search.active .input {
+  width: 200px;
 }
 
-.poem {
-	position: absolute;
-	top: 45vh;
-}
-
-/* custom scrollbar */
-::-webkit-scrollbar {
-	width: 12px;
-}
-::-webkit-scrollbar-track {
-	background: var(--lunargreen);
-}
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #555;
-}
-
-/* --------------- INTRO PAGE ---------------- */
-
-.clicker {
-	transition: 5s;
-	z-index: 1;
-}
-
-.clicker {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	height: 5rem;
-	width: 12rem;
-	letter-spacing: 4px;
-	background-color: rgba(255, 255, 255, 0);
-	cursor: pointer;
-	color: var(--solargreen);
-	text-decoration: none;
-}
-
-.clicker:hover {
-	background-color: rgba(255, 255, 255, 0);
-	letter-spacing: 8px;
-}
-
-.clicker:active {
-	letter-spacing: 4px;
-	font-size: 1.4rem;
-	transform: scale(0.97);
-	transition: 0s;
-}
-
-.clicker span {
-	position: absolute;
-	display: block;
-}
-
-.clicker span:nth-child(1) {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 2px;
-	height: 100%;
-	transform: scaleY(0);
-	transform-origin: bottom;
-	background-color: rgba(255, 255, 255, 0.6);
-	transition: transform 0.4s;
-	transition-delay: 0.2s;
-}
-
-.clicker:hover span:nth-child(1) {
-	transform: scaleY(1);
-	transform-origin: bottom;
-	transition: transform 0.5s;
-}
-
-.clicker span:nth-child(2) {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	transform: scaleX(0);
-	transform-origin: left;
-	background-color: rgba(255, 255, 255, 0.6);
-	transition: transform 0.4s;
-	transition-delay: 0.2s;
-}
-
-.clicker:hover span:nth-child(2) {
-	transform: scaleX(1);
-	transform-origin: left;
-	transition: transform 0.5s;
-}
-
-.clicker span:nth-child(3) {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	transform: scaleX(0);
-	transform-origin: left;
-	background-color: rgba(255, 255, 255, 0.6);
-	transition: transform 0.2s;
-}
-
-.clicker:hover span:nth-child(3) {
-	transform: scaleX(1);
-	transform-origin: left;
-	transition: transform 0.5s;
-	transition-delay: 0.5s;
-}
-
-.clicker span:nth-child(4) {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 2px;
-	height: 100%;
-	transform: scaleY(0);
-	transform-origin: bottom;
-	background-color: rgba(255, 255, 255, 0.6);
-	transition: transform 0.2s;
-}
-
-.clicker:hover span:nth-child(4) {
-	transform: scaleY(1);
-	transform-origin: bottom;
-	transition: transform 0.5s;
-	transition-delay: 0.5s;
-}
-
-/* --------------- PAGE 1 ---------------- */
-
-.title {
-	display: none;
-}
-.option {
-	position: absolute;
-	display: none;
-	height: 4rem;
-	width: 9rem;
-	transition: 0.2s;
-}
-.minipeopleheader {
-	position: absolute;
-	color: var(--lunargreen);
-	font-weight: bold;
-	font-size: 2rem;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	display: flex;
-}
-.minipeoplespan {
-	margin: 0 0.5rem;
-	transition: 5s;
-	opacity: 0;
-}
-.option:hover {
-	letter-spacing: 6px;
-}
-.option.yes {
-	top: 25%;
-}
-.option.no {
-	top: 66%;
-}
-.one {
-	transition: 5s;
-}
-.uno {
-	transition: 10s;
-	height: 50vh;
-	background-image: url('http://alternopolis.com/wp-content/uploads/2017/05/blackwhitemysteriouspaintings6.jpg');
-}
-
-/* --------------- PAGE 2 ---------------- */
-
-.two {
-	height: 40vh;
-}
-
-.questionmark {
-	position: absolute;
-	top: 1rem;
-	margin-bottom: 5rem;
-}
-
-.dos {
-	background-image: url('http://www.collater.al/wp-content/uploads/2018/05/Mini-People-In-The-Jungle-gli-animali-mistici-di-Dawid-Planeta-Collater.al-4.jpg');
-	height: 100vh;
-}
-
-/* --------------- PAGE 3 ---------------- */
-
-.three {
-	height: 30vh;
-}
-
-/* --------------- PAGE 4 5 6 7 ---------------- */
-
-.four {
-	background-image: url('https://cdnb.artstation.com/p/assets/images/images/006/014/115/large/dawid-planeta-wieloryb.jpg?1495426767');
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.five {
-	background-image: url('https://cdna.artstation.com/p/assets/images/images/032/186/184/large/dawid-planeta-01a.jpg?1605713339');
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.six {
-	background-image: url('https://cdna.artstation.com/p/assets/images/images/032/897/598/large/dawid-planeta-0.jpg?1607798001');
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-/* --------------- ANIMATIONS ---------------- */
-
-@keyframes fadebox {
-	0% {
-		opacity: 0.7;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes delayedfadein {
-	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fadein {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeout {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes fadeinout {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
+.search.active .btn {
+  transform: translateX(198px);
 }
