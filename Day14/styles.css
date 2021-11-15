@@ -16,7 +16,7 @@ body {
 }
 
 .navigation {
-  width: 22rem;
+  width: 28rem;
   height: 4rem;
   padding: 2rem 1rem;
   border-radius: 0.1rem;
@@ -25,11 +25,15 @@ body {
   align-items: center;
   justify-content: space-around;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+  position: relative;
 }
 
 .nav-element {
   text-decoration: none;
+  width: auto;
   color: black;
+  transition: 0.5s;
 }
 
 .closeicon {
@@ -38,6 +42,8 @@ body {
   height: 2rem;
   align-items: center;
   z-index: 1;
+  position: absolute;
+  right: 2rem;
 }
 
 .line {
@@ -45,7 +51,8 @@ body {
   height: 20px;
   background-color: #5d7e78;
   left: 50%;
-  top: 20%;
+  top: 24%;
+  transition: 1s;
 }
 
 .closeicon:hover {
@@ -59,9 +66,35 @@ body {
 
 .two {
   position: absolute;
-  transform: rotate(765deg);
+  transform: rotate(-675deg);
 }
 
-.inactive {
-  transform: rotate(0deg);
+/* CLOSED STATE PROPERTIES */
+
+.closed.navigation {
+  width: 5rem;
 }
+
+.closed.closeicon {
+  position: absolute;
+  right: 2rem;
+}
+
+.closed .nav-element{
+  /* display: none; */
+  opacity: 0;
+}
+
+.closed .line{
+  transform: rotate(90deg);
+}
+
+.closed .one{
+  transform: rotate(90deg) translateX(3px);
+}
+
+.closed .two{
+  transform: rotate(90deg) translateX(-3px);
+}
+
+

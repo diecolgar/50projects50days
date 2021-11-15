@@ -1,8 +1,8 @@
-const closeicon = document.querySelector(".closeicon");
-// const navigation = document.querySelectorAll(".navigation");
+const closeicon = document.querySelector('.closeicon')
+const navigation = document.querySelector('.navigation')
 
 closeicon.addEventListener('click', () => {
-    
-    console.log('Hola');
-    
+    navigation.classList.toggle('closed')
+    closeicon.classList.toggle('closed')
+    console.log('Holaaaa')
 })
