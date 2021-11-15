@@ -5,7 +5,9 @@
 }
 
 body {
-  background-image: linear-gradient(0deg, #89b1aa, #5d7e78);
+  background-image: url(https://i.pinimg.com/originals/18/e1/c7/18e1c7dbb9a0c8fb982162c2149041b3.jpg);
+  background-size: cover;
+  background-position: center;
   font-family: 'Noto Sans JP', sans-serif;
   display: flex;
   align-items: center;
