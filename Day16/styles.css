@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(https://www.kolpaper.com/wp-content/uploads/2020/11/Snow-Forest-Wallpaper-Desktop.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: 'Noto Sans JP', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.bigglasscontent {
+	display: flex;
+	justify-content: center;
+}
+
+.glass {
+	opacity: 0.7;
+	clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+.mainair {
+	height: 95%;
+	background-color: rgb(228, 228, 228);
+	transition: 1s;
+}
+
+.air {
+	height: 95%;
+	background-color: rgb(228, 228, 228);
+	transition: 1s;
+}
+
+.big {
+	width: 240px;
+	height: 240px;
+	position: absolute;
+	bottom: 55vh;
+	background-image: linear-gradient(rgb(255, 255, 255), rgb(142, 255, 255));
+}
+
+.glass.bigborder {
+	background-image: linear-gradient(rgb(197, 208, 209), rgb(155, 187, 194));
+	position: absolute;
+	bottom: 54vh;
+	width: 255px;
+	height: 250px;
+	z-index: -1;
+}
+
+.smallglassescontent {
+	position: absolute;
+	bottom: 0;
+	height: 33vh;
+	width: 80rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.two {
+	z-index: -1;
+}
+
+.small {
+	width: 80px;
+	height: 80px;
+	background-image: linear-gradient(rgb(255, 255, 255), rgb(142, 255, 255));
+}
+
+.glass.smallborder {
+	background-image: linear-gradient(rgb(197, 208, 209), rgb(155, 187, 194));
+	transform: translateY(5px);
+	width: 90px;
+	height: 90px;
+}
+
+.active {
+	height: 5%;
+}
+
+.big:hover {
+	cursor: pointer;
+}
+
+.small:hover {
+	cursor: pointer;
+}
