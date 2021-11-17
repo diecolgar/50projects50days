@@ -2,6 +2,7 @@ const small = document.querySelectorAll('.small');
 const big = document.querySelector('.big');
 const mainair = document.querySelector('.mainair');
 const air = document.querySelectorAll('.air');
+const newday = document.querySelector('.newday');
 
 const smalllenght = small.length
 
@@ -25,6 +26,13 @@ small.forEach((small, id) => {
     })
 
 })
+
+newday.addEventListener('click', () => {
+    air.forEach((air, id2) => {
+        air.classList.remove('active')
+    }) 
+})
+
 
 
 
