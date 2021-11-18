@@ -31,6 +31,7 @@ newday.addEventListener('click', () => {
     
     air.forEach((air, id2) => {
         air.classList.remove('active')
+        mainair.style.height =  98 + "%"
     }) 
 })
 

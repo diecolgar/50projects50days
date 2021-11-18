@@ -22,7 +22,7 @@ body {
   height: 4rem;
   padding: 2rem 1rem;
   border-radius: 0.1rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(240, 240, 240, 1.0);
   display: flex;
   align-items: center;
   justify-content: space-around;

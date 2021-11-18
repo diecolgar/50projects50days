@@ -44,11 +44,11 @@ body {
 	height: 240px;
 	position: absolute;
 	bottom: 55vh;
-	background-image: linear-gradient(rgb(174, 255, 255), rgb(142, 255, 255));
+	background-image: linear-gradient(rgb(223, 255, 255), rgb(195, 255, 255));
 }
 
 .glass.bigborder {
-	background-image: linear-gradient(#34495e, #34495e);
+	background-image: linear-gradient(#a8a8a8, #636363);
 	position: absolute;
 	bottom: 54vh;
 	width: 255px;
@@ -73,11 +73,11 @@ body {
 .small {
 	width: 80px;
 	height: 80px;
-	background-image: linear-gradient(rgb(174, 255, 255), rgb(142, 255, 255));
+	background-image: linear-gradient(rgb(223, 255, 255), rgb(195, 255, 255));
 }
 
 .glass.smallborder {
-	background-image: linear-gradient(#34495e, #34495e);
+	background-image: linear-gradient(#a8a8a8, #636363);
 	transform: translateY(5px);
 	width: 90px;
 	height: 90px;
@@ -119,14 +119,13 @@ svg {
 
 .newday:hover {
 	cursor: pointer;
-	width: 4.3rem;
-	height: 4.3rem;
-	transform: rotate(-360deg);
+	transform: rotate(-30deg);
 	background-color: rgba(255, 255, 255, 1);
 }
 
 .newday:active {
-	width: 3.5rem;
-	height: 3.5rem;
-	transition: 0.1s;
+	width: 3.8rem;
+	height: 3.8rem;
+	transition: 0.15s;
+	transform: rotate(-300deg);
 }

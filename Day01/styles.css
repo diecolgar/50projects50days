@@ -7,26 +7,11 @@
 body {
 	font-family: 'Scheherazade New', serif;
 	overflow: hidden;
-	background-color: white;
+	/* background-color: rgb(0, 0, 0); */
+	background-image: url('https://wallpaperaccess.com/full/128756.jpg');
+	background-size: cover;
+	background-position: center;
 	padding: 0 4rem;
-}
-
-nav {
-	top: 0;
-	left: 0;
-	color: white;
-	display: flex;
-	text-align: center;
-	justify-content: space-evenly;
-	width: 100%;
-	height: 5vh;
-	position: absolute;
-	background-color: black;
-	font-size: 20px;
-}
-
-nav p {
-	margin: 0;
 }
 
 .container {
@@ -41,7 +26,7 @@ nav p {
 	width: 7%;
 	padding: 1rem;
 	cursor: pointer;
-	height: 80vh;
+	height: 50vh;
 	background-size: cover;
 	background-position: center;
 	border-radius: 5rem;
