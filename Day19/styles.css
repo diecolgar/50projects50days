@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+    font-family: 'Heebo', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.switcher {
+	height: 4rem;
+	width: 4rem;
+	background-color: black;
+	position: absolute;
+	border-radius: 50%;
+	top: 15%;
+}
+
+.switcher:hover {
+	cursor: pointer;
+}
+
+.test {
+	top: 10%;
+	border: 0.9rem solid rgb(0, 110, 77);
+	background-color: none;
+	z-index: 3;
+}
+
+.moontest {
+	height: 2.25rem;
+	width: 2.25rem;
+	background-color: black;
+	border: 0.2rem solid rgb(255, 255, 255);
+	border-radius: 50%;
+	z-index: 1;
+	position: absolute;
+}
+
+.moontest2 {
+	height: 1.25rem;
+	width: 1.25rem;
+	border: 0.2rem solid rgb(255, 255, 255);
+	position: absolute;
+	border-radius: 50%;
+	z-index: 2;
+	top: 20%;
+	left: 50%;
+}
+
+.moontestborder {
+	border: 0.9rem solid rgb(0, 110, 77);
+	background-color: none;
+	z-index: 3;
+}
+
+.moonicon{
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	/* idea: que el circulo que le falta a la luna salga de ella al clickar dejando un sol redondo */
+}
+
+.clock {
+	height: 15rem;
+	width: 15rem;
+	/* background-color: rgb(226, 226, 226); */
+	position: relative;
+}
+
+.center {
+	width: 14px;
+	height: 14px;
+	background-color: black;
+	border: 4px solid rgb(0, 110, 77);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	transform: translateX(-35%) translateY(-50%);
+}
+
+.hourshand {
+	background-color: rgb(0, 0, 0);
+	width: 4px;
+	height: 110px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: top;
+	transform: rotate(0deg);
+}
+
+.minuteshand {
+	background-color: rgb(0, 0, 0);
+	width: 4px;
+	height: 180px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: top;
+	transform: rotate(-90deg);
+}
+
+.secondshand {
+	background-color: rgb(0, 110, 77);
+	width: 4px;
+	height: 180px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: top;
+	transform: rotate(-180deg);	
+}
+
+.digital {
+	position: absolute;
+	top: 72%;
+	font-size: 2.8rem;
+}
+
+.date {
+	position: absolute;
+	top: 78%;
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: rgba(0, 110, 77, 0.589);
+}
