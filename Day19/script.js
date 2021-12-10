@@ -6,6 +6,13 @@ secondshand = document.querySelector('.secondshand');
 digitaltext = document.querySelector('.digital')
 datetext = document.querySelector('.date')
 
+switcher = document.querySelector('.switcher')
+moonsec = document.querySelector('.moonsec')
+
+body = document.querySelector('body')
+
+root = document.documentElement
+
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -22,7 +29,7 @@ function update_clock() {
     let minute = date.getMinutes();
     let second = date.getSeconds();
 
-    console.log(second)
+    // console.log(second)
 
     let second_deg = (second)*6 + 180;
     let minute_deg = ((minute)*6 + 180) + second_deg/360;
@@ -53,3 +60,16 @@ function update_clock() {
 }
 
 setInterval(update_clock, 1000)
+
+
+switcher.addEventListener('click', () => {
+    moonsec.classList.toggle('displaced')
+
+    if(moonsec.classList.contains('displaced')) {
+        root.style.setProperty('--dark', 'rgb(243, 243, 243)')
+        root.style.setProperty('--light', 'rgb(31, 31, 31)')
+    } else {
+        root.style.setProperty('--dark', 'rgb(31, 31, 31)')
+        root.style.setProperty('--light', 'rgb(243, 243, 243)')  
+    }
+})
