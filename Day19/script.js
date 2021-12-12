@@ -39,12 +39,13 @@ function update_clock() {
     minuteshand.style.transform = `rotate(${minute_deg}deg)`
     secondshand.style.transform = `rotate(${second_deg}deg)`
 
+
+    // disable animation for 59 seconds to 0 seconds transition in order to avoid anti-clockwise motion
     second == 0 ? secondshand.style.transition = 'transform 0s' : secondshand.style.transition = 'transform 0.2s'
     minute == 0 ? minuteshand.style.transition = 'transform 0s' : minuteshand.style.transition = 'transform 0.2s'
     hour == 0 ? hourshand.style.transition = 'transform 0s' : hourshand.style.transition = 'transform 0.2s'
 
-
-
+    // manual digital clock zero inclusion
     if(hour > 12) {
         if(minute <10) {
             digitaltext.innerHTML = `${hour - 12}:0${minute} PM`
